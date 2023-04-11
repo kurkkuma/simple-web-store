@@ -1,0 +1,72 @@
+.basket {
+  box-shadow: inset 0 0 10px #d4d4d4;
+  width: 305px;
+  height: 910px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: fixed;
+  top: 90px;
+  z-index: 99;
+  overflow-y: auto;
+}
+.info {
+  padding: 20px 15px 20px 15px;
+  display: flex;
+  flex-direction: column;
+}
+.info > h3 {
+  font-size: 40px;
+  text-align: center;
+}
+.info > p {
+  font-size: 25px;
+}
+.info > p > span {
+  font-weight: 700;
+}
+.info button {
+  width: 254px;
+  height: 50px;
+  margin: auto;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+.basket_items {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+/* ДЛЯ ТОВАРОВ В КОРЗИНЕ  */
+.card {
+  /* border: 1px solid red; */
+  /* border-bottom: 1px solid gray; */
+  position: relative;
+  border-top: 1px solid gray;
+  width: 220px;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.photo {
+  width: 120px;
+  height: 160px;
+  padding: 15px 0;
+  margin: 0;
+}
+.card > p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+.close {
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  z-index: 999;
+  cursor: pointer;
+}
