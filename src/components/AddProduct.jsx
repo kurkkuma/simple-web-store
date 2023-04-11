@@ -65,6 +65,7 @@ function AddProduct() {
             id="title"
             name="title"
             disabled={isValid}
+            maxLength="100"
           />
           <label htmlFor="description">DESCRIPTION</label>
           <textarea
@@ -73,6 +74,7 @@ function AddProduct() {
             id="description"
             name="description"
             disabled={isValid}
+            maxLength="420"
           />
           <label htmlFor="category">Category of your product</label>
           <select

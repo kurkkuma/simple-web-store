@@ -17,6 +17,7 @@ function Store({ products, addToBasket, isWarning }) {
             id={product.id}
             image={product.image}
             title={product.title}
+            description={product.description}
             price={product.price}
             category={product.category}
             rate={product.rating.rate}
