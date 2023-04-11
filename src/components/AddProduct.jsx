@@ -11,7 +11,7 @@ function AddProduct() {
     price: 0,
     description: "",
     category: "electronics",
-    image: "https://folkmart.ua/imgs/b12813.jpg",
+    image: "",
     rating: {
       rate: 0,
       count: 0,
@@ -67,13 +67,26 @@ function AddProduct() {
             <option value="jewelery">Jewelery</option>
             <option value={`men's clothing`}>Men's clothing"</option>
             <option value={`women's clothing`}>Women's clothing</option>
+            <option value={`food`}>Food</option>
+            <option value={`sport`}>Sport</option>
+            <option value={`childen's goods`}>Childen's goods</option>
+            <option value={`a house and a garden`}>A house and a garden</option>
+            <option value={`stationery`}>Stationery</option>
+            <option value={`furniture and interior`}>
+              Furniture and interior
+            </option>
+            <option value={`auto products`}>Auto products</option>
+            <option value={`pets`}>Pets</option>
+            <option value={`other`}>Other</option>
+
             {/* <option value={`all`}>All</option> */}
           </select>
-          <label htmlFor="photo">Upload a product photo</label>
+          <label htmlFor="image">Image URL</label>
           <input
             onChange={handleInputChange}
-            type="file"
-            id="photo"
+            className={styles.image}
+            type="text"
+            id="image"
             name="image"
           />
           <label htmlFor="price">PRICE $</label>

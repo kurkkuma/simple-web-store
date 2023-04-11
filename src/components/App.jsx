@@ -52,13 +52,13 @@ function App() {
     localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
   }, [basket, totalPrice]);
   useEffect(() => {
-    setShowProducts([...products, ...newProducts]);
-  }, [products, newProducts]);
+    setShowProducts([...products]);
+  }, [products]);
 
   const addToBasket = (id) => {
     const selectedProduct = showProducts.find((product) => product.id === id);
     const updateProduct = { ...selectedProduct, id: uuidv4() };
-    console.log(updateProduct);
+
     setBasket((prevBasket) => [...prevBasket, updateProduct]);
     setTotalPrice((prev) => prev + updateProduct.price);
   };
@@ -158,6 +158,19 @@ function App() {
                 <option value="jewelery">Jewelery</option>
                 <option value={`men's clothing`}>Men's clothing</option>
                 <option value={`women's clothing`}>Women's clothing</option>
+                <option value={`food`}>Food</option>
+                <option value={`sport`}>Sport</option>
+                <option value={`childen's goods`}>Childen's goods</option>
+                <option value={`a house and a garden`}>
+                  A house and a garden
+                </option>
+                <option value={`stationery`}>Stationery</option>
+                <option value={`furniture and interior`}>
+                  Furniture and interior
+                </option>
+                <option value={`auto products`}>Auto products</option>
+                <option value={`pets`}>Pets</option>
+                <option value={`other`}>Other</option>
               </select>
             </div>
           </div>

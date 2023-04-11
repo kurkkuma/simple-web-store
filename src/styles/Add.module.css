@@ -81,7 +81,9 @@ select {
 .title {
   height: 40px;
 }
-
+.image {
+  height: 40px;
+}
 .price {
   height: 40px;
   width: 200px;
