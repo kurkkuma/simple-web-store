@@ -32,6 +32,7 @@ function App() {
   // ФУНКЦИОНАЛ
   // localStorage.removeItem("totalPrice");
   // console.log(localStorage);
+
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())

@@ -5,12 +5,13 @@ import styles from "../styles/Add.module.css";
 
 function AddProduct() {
   const uniqueId = uuidv4();
+  const [isValid, setIsValid] = useState(false);
   const [newProduct, setNewProduct] = useState({
     id: uniqueId,
     title: "",
     price: 0,
     description: "",
-    category: "electronics",
+    category: "other",
     image: "",
     rating: {
       rate: 0,
@@ -26,6 +27,16 @@ function AddProduct() {
       ...prevProduct,
       [e.target.name]: value,
     }));
+  };
+  const handleValid = () => {
+    if (
+      newProduct.title.trim() !== "" &&
+      newProduct.description.trim() !== "" &&
+      newProduct.image.trim() !== "" &&
+      newProduct.price !== 0
+    ) {
+      setIsValid(true);
+    }
   };
 
   const handleSubmit = (e) => {
@@ -53,6 +64,7 @@ function AddProduct() {
             type="text"
             id="title"
             name="title"
+            disabled={isValid}
           />
           <label htmlFor="description">DESCRIPTION</label>
           <textarea
@@ -60,9 +72,16 @@ function AddProduct() {
             type="text"
             id="description"
             name="description"
+            disabled={isValid}
           />
           <label htmlFor="category">Category of your product</label>
-          <select name="category" onChange={handleInputChange} id="category">
+          <select
+            name="category"
+            onChange={handleInputChange}
+            id="category"
+            disabled={isValid}
+          >
+            <option value={`other`}>Other</option>
             <option value="electronics">Electronics</option>
             <option value="jewelery">Jewelery</option>
             <option value={`men's clothing`}>Men's clothing"</option>
@@ -77,7 +96,6 @@ function AddProduct() {
             </option>
             <option value={`auto products`}>Auto products</option>
             <option value={`pets`}>Pets</option>
-            <option value={`other`}>Other</option>
 
             {/* <option value={`all`}>All</option> */}
           </select>
@@ -88,6 +106,8 @@ function AddProduct() {
             type="text"
             id="image"
             name="image"
+            autoComplete="off"
+            disabled={isValid}
           />
           <label htmlFor="price">PRICE $</label>
           <input
@@ -96,17 +116,36 @@ function AddProduct() {
             type="number"
             id="price"
             name="price"
+            disabled={isValid}
           />
         </form>
 
-        <Link to="/">
-          <button
-            onClick={handleSubmit}
-            className={`btn btn-primary ${styles.btn}`}
-          >
-            DONE!
-          </button>
-        </Link>
+        {isValid ? (
+          <div className={styles.check}>
+            <p className={styles.success}>
+              {`Thank you, the product data has been saved! :)`}{" "}
+            </p>
+            <Link to="/">
+              <buttons
+                onClick={handleSubmit}
+                className={`btn btn-primary ${styles.btn}`}
+              >
+                DONE!
+              </buttons>
+            </Link>
+          </div>
+        ) : (
+          <div className={styles.check}>
+            <p className={styles.warning}>Please fill in all input fields!</p>
+
+            <button
+              onClick={handleValid}
+              className={`btn btn-primary ${styles.btn}`}
+            >
+              Chek
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
