@@ -9,11 +9,7 @@ import ProductPage from "./components/ProductPage";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/add" element={<AddProduct />} />
-        <Route path="/product/:id" element={<ProductPage />} />
-      </Routes>
+      <App />
     </Router>
   </React.StrictMode>
 );

@@ -45,6 +45,7 @@ function AddProduct() {
       ? [...existProducts, newProduct]
       : [newProduct];
     localStorage.setItem("newProducts", JSON.stringify(allProducts));
+    window.location.href = "/";
   };
 
   return (
