@@ -55,6 +55,13 @@ function AddProduct() {
       </nav>
 
       <div className={styles.add}>
+        <Link to="/">
+          <img
+            className={styles.close}
+            src="./images/close.png"
+            alt="close_icon"
+          />
+        </Link>
         <h1>Create your own product</h1>
         <form className={styles.form} action="">
           <label htmlFor="title">TITLE</label>
@@ -65,7 +72,7 @@ function AddProduct() {
             id="title"
             name="title"
             disabled={isValid}
-            maxLength="100"
+            maxLength="150"
           />
           <label htmlFor="description">DESCRIPTION</label>
           <textarea
@@ -74,7 +81,7 @@ function AddProduct() {
             id="description"
             name="description"
             disabled={isValid}
-            maxLength="420"
+            maxLength="820"
           />
           <label htmlFor="category">Category of your product</label>
           <select
@@ -128,12 +135,12 @@ function AddProduct() {
               {`Thank you, the product data has been saved! :)`}{" "}
             </p>
             <Link to="/">
-              <buttons
+              <button
                 onClick={handleSubmit}
                 className={`btn btn-primary ${styles.btn}`}
               >
                 DONE!
-              </buttons>
+              </button>
             </Link>
           </div>
         ) : (

@@ -1,10 +1,8 @@
 .nav {
   width: 100vw;
   background-color: rgb(255, 255, 255);
-  /* border: 1px solid red; */
   box-shadow: 0 0 25px rgb(94, 94, 94);
   padding: 0px 0;
-  /* margin-bottom: 20px; */
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -28,24 +26,35 @@ h1 {
 }
 .add {
   border-radius: 10px;
-  /* border: 1px solid red; */
   box-shadow: 0 0 20px rgb(206, 206, 206);
   width: 1500px;
   height: 750px;
-  position: absolute;
+  position: relative;
   top: 140px;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
 }
+.close {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 900;
+  cursor: pointer;
+  top: 20px;
+  left: 1410px;
+  filter: invert(50%);
+}
 .btn {
+  position: absolute;
   z-index: 2;
   width: 400px;
   height: 60px;
   font-size: 25px;
   letter-spacing: 10px;
   align-self: flex-end;
+  left: 550px;
   /* bottom: 10px; */
 }
 .add > h1 {

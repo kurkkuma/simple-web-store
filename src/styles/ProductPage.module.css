@@ -1,0 +1,84 @@
+/* ВЕРХНЯЯ ПАНЕЛЬ  */
+.nav {
+  width: 100vw;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 25px rgb(94, 94, 94);
+  padding: 0px 0;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 110;
+}
+.nav > p {
+  font-size: 25px;
+  letter-spacing: 9px;
+}
+.nav > p,
+h1 {
+  margin: auto;
+}
+/* ОСНОВА  */
+.wrapper {
+  /* border: 3px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.wrapper > h1 {
+  margin: 110px 70px 10px 70px;
+  text-align: center;
+  /* margin-top: 110px;
+  margin-bottom: 10px; */
+}
+.wrapper > p {
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: 7px;
+  color: rgb(127, 127, 127);
+}
+.productContainer {
+  /* border: 3px solid rgb(255, 191, 0); */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 200px;
+  padding: 0 70px;
+  margin-top: 50px;
+}
+.productContainer > img {
+  /* border: 3px solid rgb(94, 255, 0); */
+  width: 600px;
+  height: 650px;
+}
+.productInfo {
+  /* border: 3px solid rgb(0, 179, 255); */
+  width: 1200px;
+}
+.productInfo > h3 {
+  font-size: 40px;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+}
+.productInfo > h5 {
+  font-size: 30px;
+  color: rgb(84, 84, 84);
+}
+.productInfo > p > span {
+  font-size: 30px;
+  font-weight: 500;
+  color: rgb(84, 84, 84);
+}
+.productInfo > p {
+  font-size: 25px;
+  color: rgb(84, 84, 84);
+}
+/* НИЖНЯЯ ЧАСТЬ */
+.recommendText {
+  font-size: 40px;
+  letter-spacing: 10px;
+  margin: 30px 0 50px 0;
+  text-align: center;
+  color: rgb(91, 138, 232);
+}

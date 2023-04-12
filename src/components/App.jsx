@@ -9,7 +9,10 @@ export const AppContext = createContext();
 
 function App() {
   // СТЕЙТЫ
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(() => {
+    const allProducts = localStorage.getItem("products");
+    return allProducts ? JSON.parse(allProducts) : [];
+  });
 
   const [showProducts, setShowProducts] = useState([]);
   const [selectedOption, setSelectedOption] = useState("all");
@@ -46,14 +49,13 @@ function App() {
           };
         });
         setProducts([...newArrProducts, ...newProducts]);
-        // setShowProducts([...newArrProducts, ...newProducts]);
       });
   }, []);
   useEffect(() => {
+    localStorage.setItem("products", JSON.stringify(products));
     localStorage.setItem("basket", JSON.stringify(basket));
-
     localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
-  }, [basket, totalPrice]);
+  }, [products, basket, totalPrice]);
   useEffect(() => {
     setShowProducts([...products]);
   }, [products]);

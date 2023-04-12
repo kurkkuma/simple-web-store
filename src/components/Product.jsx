@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import styles from "../styles/Store.module.css";
+import { Link } from "react-router-dom";
 import { AppContext } from "./App";
 
 function Product({
@@ -17,7 +18,10 @@ function Product({
 
   return (
     <div className={styles.card}>
-      <img src={image} alt={`product ${id}`} />
+      <Link to={`/product/${id}`}>
+        <img src={image} alt={`product ${id}`} className={styles.img} />
+      </Link>
+
       <h5>{validTitle}...</h5>
       <div className={styles.hoverBox}></div>
       <h3>{price}$</h3>
