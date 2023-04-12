@@ -1,5 +1,4 @@
 .products {
-  /* border: 1px solid green; */
   width: 99%;
   display: flex;
   flex-direction: row;
@@ -20,7 +19,6 @@
   width: 290px;
   height: 540px;
   border-radius: 10px;
-  /* border: 1px solid blue; */
   box-shadow: 0 0 15px #d4d4d4;
   margin: 25px;
   padding: 20px;
@@ -29,66 +27,7 @@
   position: relative;
 
   transform: scale(1);
-  transform-origin: left;
-  /* transition: transform 0.09s ease-in-out; */
-}
-.card:hover {
-  transform: scaleX(2);
-  z-index: 50;
-  box-shadow: 0 0 30px #afafaf;
-}
-
-.card:hover > img {
-  transform: scaleX(0.5);
-  position: absolute;
-  left: -48px;
-}
-/* .card:hover > h3 {
-  transform: scaleX(0.5);
-
-  position: absolute;
-  left: -6px;
-} */
-.card:hover > h5 {
-  transform: scaleX(0.5);
-  position: absolute;
-  left: 62px;
-  top: 21px;
-  width: 290px;
-}
-.card:hover > .info {
-  transform: scaleX(0.5);
-  position: absolute;
-  left: -35px;
-}
-.card:hover > button {
-  transform: scaleX(0.5);
-}
-.hoverPrice {
-  transform: scaleX(0.5);
-
-  font-size: 35px;
-  position: absolute;
-  top: 303px;
-  left: -15px;
-  color: rgb(0, 0, 0);
-  width: 100px;
-  height: 50px;
-}
-.hoverPrice > h3 {
-  font-weight: 700;
-}
-
-.hoverBox {
-  display: flex;
-  flex-direction: column;
-  /* font-size: 10px; */
-  font-weight: 400;
-  transform: scaleX(0.5);
-  position: absolute;
-  left: 68px;
-  top: 25px;
-  width: 270px;
+  transition: transform 0.3s ease-in-out;
 }
 .card > img {
   width: 230px;
@@ -102,7 +41,6 @@
   top: 335px;
   font-weight: 700;
 }
-
 .info {
   position: absolute;
   top: 395px;
@@ -124,4 +62,9 @@
   align-self: center;
   position: absolute;
   top: 470px;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px #c1cfeb;
 }

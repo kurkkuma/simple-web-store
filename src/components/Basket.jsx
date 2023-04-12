@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import BasketItem from "./BasketItem";
 import styles from "../styles/Basket.module.css";
 

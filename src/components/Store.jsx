@@ -2,7 +2,7 @@ import React from "react";
 import Product from "./Product";
 import styles from "../styles/Store.module.css";
 
-function Store({ products, addToBasket, isWarning }) {
+function Store({ products, isWarning }) {
   return (
     // РЕНДЕР ТОВАРОВ
     <div className={styles.products}>
@@ -22,7 +22,6 @@ function Store({ products, addToBasket, isWarning }) {
             category={product.category}
             rate={product.rating.rate}
             count={product.rating.count}
-            addToBasket={addToBasket}
           />
         ))
       )}
