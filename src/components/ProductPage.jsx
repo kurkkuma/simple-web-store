@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from "react";
+import React, { useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import styles from "../styles/ProductPage.module.css";
 import { AppContext } from "./App";

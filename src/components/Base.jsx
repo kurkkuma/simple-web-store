@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+
+import { AppContext } from "./App";
 import Basket from "./Basket";
 import Store from "./Store";
+
 import styles from "../styles/Main.module.css";
-import { AppContext } from "./App";
 
 function Base() {
   const {
@@ -28,6 +30,11 @@ function Base() {
         <h1>YOUR FAVORITE ONLINE STORE</h1>
         <p className="text-primary">Buy quickly and conveniently</p>
 
+        <Link to="/own-products">
+          <button className={`dropbtn btn btn-dark ${styles.btnOwnProducts}`}>
+            My products
+          </button>
+        </Link>
         <Link to="/add">
           <button className={`dropbtn btn btn-dark ${styles.btnAdd}`}>
             Add product

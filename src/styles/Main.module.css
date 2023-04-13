@@ -43,6 +43,15 @@ h1 {
   height: 50px;
   /* z-index: 10000; */
 }
+.btnOwnProducts {
+  letter-spacing: 2px;
+  font-size: 20px;
+  position: absolute;
+  top: 15px;
+  right: 285px;
+  width: 204px;
+  height: 50px;
+}
 .fullstore {
   z-index: 1;
   top: 100px;
@@ -63,8 +72,6 @@ h1 {
   flex-direction: column;
   align-items: center;
   top: 100px;
-
-  /* position: absolute; */
   left: 305px;
 }
 /* ДЛЯ ПОИСКА И ФИЛТРА */

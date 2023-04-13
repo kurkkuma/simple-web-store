@@ -1,9 +1,12 @@
 import { useEffect, useState, createContext, useContext } from "react";
-import { v4 as uuidv4 } from "uuid";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
+
 import Base from "./Base";
 import AddProduct from "./AddProduct";
 import ProductPage from "./ProductPage";
+import OwnProducts from "./OwnProducts";
+
 export const AppContext = createContext();
 
 function App() {
@@ -143,12 +146,14 @@ function App() {
         basket,
         totalPrice,
         deleteFromBasket,
+        newProducts,
       }}
     >
       <Routes>
         <Route path="/" element={<Base />} />
         <Route path="/add" element={<AddProduct />} />
         <Route path="/product/:id" element={<ProductPage />} />
+        <Route path="/own-products" element={<OwnProducts />} />
       </Routes>
     </AppContext.Provider>
   );
