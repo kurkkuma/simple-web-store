@@ -1,10 +1,8 @@
 .nav {
   width: 100vw;
   background-color: rgb(255, 255, 255);
-  /* border: 1px solid red; */
   box-shadow: 0 0 25px rgb(94, 94, 94);
   padding: 0px 0;
-  /* margin-bottom: 20px; */
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -25,6 +23,12 @@ h1 {
   height: 35px;
   filter: invert(100%);
 }
+.warning {
+  margin-top: 60px;
+  font-size: 30px;
+  color: gray;
+  letter-spacing: 5px;
+}
 .btnBasket {
   position: absolute;
   position: fixed;
@@ -32,7 +36,6 @@ h1 {
   left: 25px;
   width: 204px;
   height: 50px;
-  /* z-index: 10000; */
 }
 .btnHome {
   letter-spacing: 2px;
@@ -46,7 +49,6 @@ h1 {
   height: 50px;
 }
 .products {
-  /* border: 7px solid rgb(255, 128, 0); */
   width: 99%;
   display: flex;
   flex-direction: row;
@@ -56,7 +58,6 @@ h1 {
   margin: 80px 0 0 0;
 }
 .fullwrapper {
-  /* border: 7px solid red; */
   justify-content: center;
   z-index: 1;
   top: 100px;
@@ -68,7 +69,6 @@ h1 {
   left: 140px;
 }
 .halfwrapper {
-  /* border: 7px solid red; */
   position: absolute;
   width: 1740px;
   display: flex;
@@ -78,4 +78,67 @@ h1 {
   top: 100px;
 
   left: 295px;
+}
+.halffunc {
+  width: 1300px;
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 100px;
+  align-items: center;
+}
+.fullfunc {
+  width: 1300px;
+  position: absolute;
+  top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 100px;
+  align-items: center;
+  left: 80px;
+}
+
+.search > label {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-right: 10px;
+}
+.search > input {
+  width: 350px;
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 24px;
+}
+.search > input:focus {
+  outline: none;
+  font-size: 24px;
+}
+.search > button > img {
+  width: 40px;
+  height: 40px;
+}
+/* ДЛЯ ФИЛЬТРА */
+.filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.filter > label {
+  width: 400px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-right: 10px;
+}
+.filter > select {
+  font-size: 19px;
+}
+.filter > select > option {
+  font-size: 19px;
 }

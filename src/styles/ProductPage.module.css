@@ -50,30 +50,22 @@ h1 {
 }
 /* ОСНОВА  */
 .fullwrapper {
-  /* border: 3px solid red; */
-
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .halfwrapper {
-  /* border: 3px solid red; */
-
   position: absolute;
   width: 1520px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* top: 70px; */
-
   left: 405px;
 }
 .halfwrapper > h1 {
   margin: 110px 70px 10px 70px;
   text-align: center;
-  /* margin-top: 110px;
-  margin-bottom: 10px; */
 }
 .halfwrapper > p {
   text-align: center;
@@ -82,7 +74,6 @@ h1 {
   color: rgb(127, 127, 127);
 }
 .halfwrapper .productContainer {
-  /* border: 3px solid rgb(255, 191, 0); */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -92,20 +83,15 @@ h1 {
   width: 1600px;
 }
 .halfwrapper .productInfo {
-  /* border: 3px solid rgb(0, 179, 255); */
-
   width: 900px;
 }
 .halfwrapper .productInfo > p {
   font-size: 25px;
   color: rgb(84, 84, 84);
 }
-
 .fullwrapper > h1 {
   margin: 110px 70px 10px 70px;
   text-align: center;
-  /* margin-top: 110px;
-  margin-bottom: 10px; */
 }
 .fullwrapper > p {
   text-align: center;
@@ -114,7 +100,6 @@ h1 {
   color: rgb(127, 127, 127);
 }
 .fullwrapper .productContainer {
-  /* border: 3px solid rgb(255, 191, 0); */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -124,12 +109,10 @@ h1 {
 }
 
 .productContainer > img {
-  /* border: 3px solid rgb(94, 255, 0); */
   width: 600px;
   height: 650px;
 }
 .fullwrapper .productInfo {
-  /* border: 3px solid rgb(0, 179, 255); */
   width: 1200px;
 }
 .price {
@@ -141,7 +124,6 @@ h1 {
   display: flex;
   flex-direction: row;
   gap: 100px;
-  /* border: 3px solid rgb(0, 179, 255); */
 }
 .btnToBasket {
   width: 255px;

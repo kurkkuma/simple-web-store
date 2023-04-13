@@ -29,7 +29,6 @@ function Base() {
       <nav className={styles.nav}>
         <h1>YOUR FAVORITE ONLINE STORE</h1>
         <p className="text-primary">Buy quickly and conveniently</p>
-
         <Link to="/own-products">
           <button className={`dropbtn btn btn-dark ${styles.btnOwnProducts}`}>
             My products
@@ -40,7 +39,6 @@ function Base() {
             Add product
           </button>
         </Link>
-
         <button
           onClick={toggleShow}
           className={`dropbtn btn btn-dark ${styles.btnBasket}`}

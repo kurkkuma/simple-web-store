@@ -1,10 +1,8 @@
 .nav {
   width: 100vw;
   background-color: rgb(255, 255, 255);
-  /* border: 1px solid red; */
   box-shadow: 0 0 25px rgb(94, 94, 94);
   padding: 0px 0;
-  /* margin-bottom: 20px; */
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -41,7 +39,6 @@ h1 {
   left: 25px;
   width: 204px;
   height: 50px;
-  /* z-index: 10000; */
 }
 .btnOwnProducts {
   letter-spacing: 2px;
@@ -61,8 +58,6 @@ h1 {
   flex-direction: column;
   align-items: center;
   left: 140px;
-
-  /* border: 1px solid rgb(0, 255, 17); */
 }
 .halfstore {
   position: absolute;
@@ -78,7 +73,6 @@ h1 {
 .fullfunc {
   width: 1300px;
   position: absolute;
-  /* left: 600px; */
   top: 30px;
   display: flex;
   flex-direction: row;
@@ -91,7 +85,6 @@ h1 {
   width: 1300px;
   position: absolute;
   top: 30px;
-  /* border: 2px solid red; */
   left: 40px;
   display: flex;
   flex-direction: row;

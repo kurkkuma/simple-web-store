@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+
 import styles from "../styles/Add.module.css";
 
 function AddProduct() {
   const uniqueId = uuidv4();
+
   const [isValid, setIsValid] = useState(false);
   const [newProduct, setNewProduct] = useState({
     id: uniqueId,
@@ -53,7 +55,7 @@ function AddProduct() {
         <h1>YOUR FAVORITE ONLINE STORE</h1>
         <p className="text-primary">Buy quickly and conveniently</p>
       </nav>
-
+      {/* ФОРМА */}
       <div className={styles.add}>
         <Link to="/">
           <img
@@ -105,8 +107,6 @@ function AddProduct() {
             </option>
             <option value={`auto products`}>Auto products</option>
             <option value={`pets`}>Pets</option>
-
-            {/* <option value={`all`}>All</option> */}
           </select>
           <label htmlFor="image">Image URL</label>
           <input
@@ -128,7 +128,6 @@ function AddProduct() {
             disabled={isValid}
           />
         </form>
-
         {isValid ? (
           <div className={styles.check}>
             <p className={styles.success}>
@@ -146,7 +145,6 @@ function AddProduct() {
         ) : (
           <div className={styles.check}>
             <p className={styles.warning}>Please fill in all input fields!</p>
-
             <button
               onClick={handleValid}
               className={`btn btn-primary ${styles.btn}`}

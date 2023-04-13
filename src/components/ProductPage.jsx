@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { useParams, Link } from "react-router-dom";
-import styles from "../styles/ProductPage.module.css";
 import { AppContext } from "./App";
 import Product from "./Product";
 import Basket from "./Basket";
+
+import styles from "../styles/ProductPage.module.css";
 
 function ProductPage() {
   const { id } = useParams();
@@ -18,6 +19,7 @@ function ProductPage() {
   } = useContext(AppContext);
 
   const selectedProduct = products.find((product) => product.id === id);
+
   const productsInThisCategory = products.filter(
     (product) => product.category === selectedProduct.category
   );
@@ -27,13 +29,11 @@ function ProductPage() {
       <nav className={styles.nav}>
         <h1>YOUR FAVORITE ONLINE STORE</h1>
         <p className="text-primary">Buy quickly and conveniently</p>
-
         <Link to="/">
           <button className={`dropbtn btn btn-dark ${styles.btnHome}`}>
             Home
           </button>
         </Link>
-
         <button
           onClick={toggleShow}
           className={`dropbtn btn btn-dark ${styles.btnBasket}`}
@@ -58,7 +58,6 @@ function ProductPage() {
             src={selectedProduct.image}
             alt={`photo ${selectedProduct.title}`}
           />
-
           <div className={styles.productInfo}>
             <div className={styles.priceAndBtn}>
               <h3 className={styles.price}>Price: {selectedProduct.price}$</h3>

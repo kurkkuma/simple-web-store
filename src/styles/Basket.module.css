@@ -40,8 +40,6 @@
 }
 /* ДЛЯ ТОВАРОВ В КОРЗИНЕ  */
 .card {
-  /* border: 1px solid red; */
-  /* border-bottom: 1px solid gray; */
   position: relative;
   border-top: 1px solid gray;
   width: 220px;

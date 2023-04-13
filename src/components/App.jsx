@@ -129,8 +129,6 @@ function App() {
   return (
     <AppContext.Provider
       value={{
-        isOpen,
-        // setIsOpen,
         addToBasket,
         toggleShow,
         isOpen,
@@ -141,12 +139,14 @@ function App() {
         handleSelect,
         selectedOption,
         isWarning,
+        setIsWarning,
         showProducts,
         products,
         basket,
         totalPrice,
         deleteFromBasket,
         newProducts,
+        setNewProducts,
       }}
     >
       <Routes>

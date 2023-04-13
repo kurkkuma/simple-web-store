@@ -1,7 +1,8 @@
-import React, { useContext, useState } from "react";
-import styles from "../styles/Store.module.css";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { AppContext } from "./App";
+
+import styles from "../styles/Store.module.css";
 
 function Product({
   id,
@@ -13,18 +14,35 @@ function Product({
   rate,
   count,
 }) {
+  const { addToBasket, newProducts, setNewProducts } = useContext(AppContext);
+  const { pathname } = useLocation();
+  const isOwnProductPage = pathname === "/own-products";
+
   const validTitle = title.length > 40 ? title.slice(0, 40) : title;
-  const { addToBasket } = useContext(AppContext);
 
   const handleToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const deleteNewProduct = (id) => {
+    const newArrProducts = newProducts.filter((product) => product.id !== id);
+    setNewProducts([...newArrProducts]);
+
+    localStorage.setItem("newProducts", JSON.stringify(newArrProducts));
+  };
+
   return (
     <div className={styles.card}>
+      {isOwnProductPage && (
+        <img
+          onClick={() => deleteNewProduct(id)}
+          className={styles.deleteProduct}
+          src="../images/close.png"
+          alt="delete"
+        />
+      )}
       <Link to={`/product/${id}`} onClick={handleToTop}>
         <img src={image} alt={`product ${id}`} className={styles.img} />
       </Link>
-
       <h5>{validTitle}...</h5>
       <div className={styles.hoverBox}></div>
       <h3>{price}$</h3>
