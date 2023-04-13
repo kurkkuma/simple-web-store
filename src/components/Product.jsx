@@ -16,9 +16,12 @@ function Product({
   const validTitle = title.length > 40 ? title.slice(0, 40) : title;
   const { addToBasket } = useContext(AppContext);
 
+  const handleToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <div className={styles.card}>
-      <Link to={`/product/${id}`}>
+      <Link to={`/product/${id}`} onClick={handleToTop}>
         <img src={image} alt={`product ${id}`} className={styles.img} />
       </Link>
 

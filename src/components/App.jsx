@@ -103,7 +103,7 @@ function App() {
     <AppContext.Provider
       value={{
         isOpen,
-        setIsOpen,
+        // setIsOpen,
         addToBasket,
         toggleShow,
         isOpen,

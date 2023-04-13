@@ -19,6 +19,35 @@
 h1 {
   margin: auto;
 }
+.nav > button > img {
+  width: 35px;
+  height: 35px;
+  filter: invert(100%);
+}
+.btnHome {
+  letter-spacing: 2px;
+  font-size: 23px;
+  font-weight: 400;
+  position: absolute;
+  position: fixed;
+  top: 15px;
+  left: 275px;
+  width: 204px;
+  height: 50px;
+}
+.nav > button > img {
+  width: 35px;
+  height: 35px;
+  filter: invert(100%);
+}
+.btnBasket {
+  position: absolute;
+  position: fixed;
+  top: 15px;
+  left: 25px;
+  width: 204px;
+  height: 50px;
+}
 /* ОСНОВА  */
 .wrapper {
   /* border: 3px solid red; */
@@ -81,4 +110,12 @@ h1 {
   margin: 30px 0 50px 0;
   text-align: center;
   color: rgb(91, 138, 232);
+}
+.recommendProduct {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 0 0 0;
 }

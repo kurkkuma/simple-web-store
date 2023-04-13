@@ -8,18 +8,20 @@ import styles from "../styles/Main.module.css";
 import { AppContext } from "./App";
 
 function Base() {
-  const { toggleShow } = useContext(AppContext);
-  const { isOpen, setIsOpen } = useContext(AppContext);
-  const { searchInput } = useContext(AppContext);
-  const { handleSearch } = useContext(AppContext);
-  const { handleSelect } = useContext(AppContext);
-  const { selectedOption } = useContext(AppContext);
-  const { isWarning } = useContext(AppContext);
-  const { showProducts } = useContext(AppContext);
-  const { products } = useContext(AppContext);
-  const { basket } = useContext(AppContext);
-  const { totalPrice } = useContext(AppContext);
-  const { deleteFromBasket } = useContext(AppContext);
+  const {
+    toggleShow,
+    isOpen,
+    searchInput,
+    handleSearch,
+    handleSelect,
+    selectedOption,
+    isWarning,
+    showProducts,
+    products,
+    basket,
+    totalPrice,
+    deleteFromBasket,
+  } = useContext(AppContext);
 
   return (
     <div className="Base">

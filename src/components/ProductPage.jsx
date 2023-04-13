@@ -1,22 +1,41 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useContext, useRef } from "react";
+import { useParams, Link } from "react-router-dom";
 import styles from "../styles/ProductPage.module.css";
-
+import { AppContext } from "./App";
+import Product from "./Product";
 function ProductPage() {
   const { id } = useParams();
-  const products = JSON.parse(localStorage.getItem("products"));
+  const { products, toggleShow } = useContext(AppContext);
   const selectedProduct = products.find((product) => product.id === id);
+
+  const productsInThisCategory = products.filter(
+    (product) => product.category === selectedProduct.category
+  );
 
   if (!selectedProduct) {
     return <div>Loading...</div>;
   }
 
   console.log(selectedProduct);
+
   return (
     <div>
       <nav className={styles.nav}>
         <h1>YOUR FAVORITE ONLINE STORE</h1>
         <p className="text-primary">Buy quickly and conveniently</p>
+
+        <Link to="/">
+          <button className={`dropbtn btn btn-dark ${styles.btnHome}`}>
+            Home
+          </button>
+        </Link>
+
+        <button
+          onClick={toggleShow}
+          className={`dropbtn btn btn-dark ${styles.btnBasket}`}
+        >
+          <img src="../images/cart.png" alt="" />
+        </button>
       </nav>
       <div className={styles.wrapper}>
         <h1>{selectedProduct.title}</h1>
@@ -39,6 +58,21 @@ function ProductPage() {
           </div>
         </div>
         <h3 className={styles.recommendText}>Products from this category</h3>
+        <div className={styles.recommendProduct}>
+          {productsInThisCategory.map((product) => (
+            <Product
+              key={product.id}
+              id={product.id}
+              image={product.image}
+              title={product.title}
+              description={product.description}
+              price={product.price}
+              category={product.category}
+              rate={product.rating.rate}
+              count={product.rating.count}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
