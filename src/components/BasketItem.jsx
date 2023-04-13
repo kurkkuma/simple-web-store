@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "../styles/Basket.module.css";
 
-function BasketItem({ id, image, title, price, deleteFromBasket }) {
-  const showTitle = title.length > 25 ? title.slice(0, 25) : title;
+function BasketItem({ id, image, title, price, count, deleteFromBasket }) {
+  const showTitle = title.length > 17 ? title.slice(0, 17) : title;
   return (
     <div className={styles.card}>
       <img
@@ -14,6 +14,7 @@ function BasketItem({ id, image, title, price, deleteFromBasket }) {
       <img className={styles.photo} src={image} alt="" />
       <h6>{showTitle}...</h6>
       <p>{price}$</p>
+      <p>{count} pcs</p>
     </div>
   );
 }

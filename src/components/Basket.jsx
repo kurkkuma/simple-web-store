@@ -23,6 +23,7 @@ function Basket({ basket, totalPrice, deleteFromBasket }) {
             image={item.image}
             title={item.title}
             price={item.price}
+            count={item.count}
             deleteFromBasket={deleteFromBasket}
           />
         ))}

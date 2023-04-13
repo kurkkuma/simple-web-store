@@ -60,14 +60,40 @@ function App() {
 
   const addToBasket = (id) => {
     const selectedProduct = showProducts.find((product) => product.id === id);
-    const updateProduct = { ...selectedProduct, id: uuidv4() };
+    const updateProduct = { ...selectedProduct, id: uuidv4(), count: 1 };
+    const index = basket.findIndex(
+      (product) => product.title === updateProduct.title
+    );
 
-    setBasket((prevBasket) => [...prevBasket, updateProduct]);
+    if (index === -1) {
+      setBasket((prevBasket) => [...prevBasket, updateProduct]);
+    } else {
+      const updatedBasket = [...basket];
+      updatedBasket[index] = {
+        ...updatedBasket[index],
+        count: updatedBasket[index].count + 1,
+      };
+      setBasket(updatedBasket);
+    }
     setTotalPrice((prev) => prev + updateProduct.price);
   };
   const deleteFromBasket = (id) => {
     const deletedProduct = basket.find((product) => product.id === id);
-    setBasket(basket.filter((product) => product !== deletedProduct));
+    const index = basket.findIndex(
+      (product) => product.title === deletedProduct.title
+    );
+
+    if (index === -1 || deletedProduct.count === 1) {
+      setBasket(basket.filter((product) => product !== deletedProduct));
+    } else {
+      const updatedBasket = [...basket];
+      updatedBasket[index] = {
+        ...updatedBasket[index],
+        count: updatedBasket[index].count - 1,
+      };
+      setBasket(updatedBasket);
+    }
+
     setTotalPrice((prev) => prev - deletedProduct.price);
   };
   const toggleShow = () => {
