@@ -1,6 +1,5 @@
 import { useEffect, useState, createContext, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
-import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Base from "./Base";
 import AddProduct from "./AddProduct";
@@ -34,9 +33,8 @@ function App() {
     const savedTotalPrice = localStorage.getItem("totalPrice");
     return savedTotalPrice ? JSON.parse(savedTotalPrice) : 0;
   });
+
   // ФУНКЦИОНАЛ
-  // localStorage.removeItem("totalPrice");
-  // console.log(localStorage);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")

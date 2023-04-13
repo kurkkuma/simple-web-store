@@ -1,6 +1,4 @@
 import React, { useContext } from "react";
-// import { useEffect, useState, createContext, useContext } from "react";
-// import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
 import Basket from "./Basket";
 import Store from "./Store";

@@ -38,7 +38,6 @@ function AddProduct() {
       setIsValid(true);
     }
   };
-
   const handleSubmit = (e) => {
     const existProducts = JSON.parse(localStorage.getItem("newProducts")) || [];
     const allProducts = Array.isArray(existProducts)

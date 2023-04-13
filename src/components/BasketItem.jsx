@@ -8,7 +8,7 @@ function BasketItem({ id, image, title, price, deleteFromBasket }) {
       <img
         className={styles.close}
         onClick={() => deleteFromBasket(id)}
-        src="./images/close.png"
+        src="../images/close.png"
         alt=""
       />
       <img className={styles.photo} src={image} alt="" />

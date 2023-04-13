@@ -3,20 +3,24 @@ import { useParams, Link } from "react-router-dom";
 import styles from "../styles/ProductPage.module.css";
 import { AppContext } from "./App";
 import Product from "./Product";
+import Basket from "./Basket";
+
 function ProductPage() {
   const { id } = useParams();
-  const { products, toggleShow } = useContext(AppContext);
-  const selectedProduct = products.find((product) => product.id === id);
+  const {
+    products,
+    toggleShow,
+    isOpen,
+    basket,
+    totalPrice,
+    deleteFromBasket,
+    addToBasket,
+  } = useContext(AppContext);
 
+  const selectedProduct = products.find((product) => product.id === id);
   const productsInThisCategory = products.filter(
     (product) => product.category === selectedProduct.category
   );
-
-  if (!selectedProduct) {
-    return <div>Loading...</div>;
-  }
-
-  console.log(selectedProduct);
 
   return (
     <div>
@@ -37,7 +41,16 @@ function ProductPage() {
           <img src="../images/cart.png" alt="" />
         </button>
       </nav>
-      <div className={styles.wrapper}>
+      <div>
+        {isOpen && (
+          <Basket
+            basket={basket}
+            totalPrice={totalPrice}
+            deleteFromBasket={deleteFromBasket}
+          />
+        )}
+      </div>
+      <div className={isOpen ? styles.halfwrapper : styles.fullwrapper}>
         <h1>{selectedProduct.title}</h1>
         <p>{selectedProduct.category}</p>
         <div className={styles.productContainer}>
@@ -47,7 +60,15 @@ function ProductPage() {
           />
 
           <div className={styles.productInfo}>
-            <h3>Price: {selectedProduct.price}$</h3>
+            <div className={styles.priceAndBtn}>
+              <h3 className={styles.price}>Price: {selectedProduct.price}$</h3>
+              <button
+                onClick={() => addToBasket(selectedProduct.id)}
+                className={`btn btn-primary ${styles.btnToBasket}`}
+              >
+                ADD TO BASKET
+              </button>
+            </div>
             <h5>
               Rate: {selectedProduct.rating.rate}{" "}
               {`(${selectedProduct.rating.count} reviews)`}
